@@ -1,6 +1,5 @@
-"use strict";
-
 (function(){
+	"use strict";
 
 	var screenEle = document.getElementById("screen");
 	var plainText = screenEle.innerHTML;
@@ -17,7 +16,7 @@
 	function mainLoop() {
 
 		// Stage 0 = initial scrambling sequence
-		if (stage == 0) {
+		if (stage === 0) {
 			if (--initialShuffleIterations < 1) {
 				stage = 1;
 				nextStep = revealAndShuffle;
@@ -25,7 +24,7 @@
 		}
 		// Stage 1 = revealing the plain text
 		else {
-			if (encryptedElements.length == 0){
+			if (encryptedElements.length === 0){
 				return;
 			}
 		}
@@ -49,7 +48,7 @@
 	function shuffle() {
 		for (var i = 0; i < plainText.length; i++) {
 			if (isWhiteSpace(plainText[i]))
-				screenArray[i] = plainText[i]
+				screenArray[i] = plainText[i];
 			else
 				screenArray[i] = getRandomChar();
 		}
@@ -57,16 +56,18 @@
 
 	// Reveal a few characters
 	function revealAndShuffle() {
+		var pos, i;
+		
 		// Reveal some
-		for (var i = 0; i < revealEachFrame; i++) {
-			var pos = getRandomInt(0, encryptedElements.length);
+		for (i = 0; i < revealEachFrame; i++) {
+			pos = getRandomInt(0, encryptedElements.length);
 			screenArray[encryptedElements[pos]] = "<span style=\"color:#2a68d6\">" + plainText[encryptedElements[pos]] + "</span>";
 			encryptedElements.splice(pos, 1);
 		}
 
 		// Shuffle some
-		for (var i = 0; i < shuffleEachFrame; i++) {
-			var pos = getRandomInt(0, encryptedElements.length);
+		for (i = 0; i < shuffleEachFrame; i++) {
+			pos = getRandomInt(0, encryptedElements.length);
 			screenArray[encryptedElements[pos]] = getRandomChar();
 		}
 	}
@@ -99,4 +100,4 @@
 
 	window.onload = mainLoop;
 
-})()
+})();
