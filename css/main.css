@@ -1,9 +1,13 @@
-@font-face{ 
+@font-face { 
 	font-family: 'VGA8';
 	src: url('../fonts/ibm_vga8.eot');
 	src: url('../fonts/ibm_vga8.eot?#iefix') format('embedded-opentype'),
 	     url('../fonts/ibm_vga8.woff') format('woff'),
 	     url('../fonts/ibm_vga8.ttf') format('truetype');
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 pre {
