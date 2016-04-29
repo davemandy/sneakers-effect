@@ -1,0 +1,21 @@
+@font-face{ 
+	font-family: 'VGA8';
+	src: url('../fonts/ibm_vga8.eot');
+	src: url('../fonts/ibm_vga8.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/ibm_vga8.woff') format('woff'),
+	     url('../fonts/ibm_vga8.ttf') format('truetype');
+}
+
+pre {
+	display: inline-block;
+	font-family: VGA8;
+	font-size: 16px;
+	background-color: black;
+	color: #6a7573;
+	text-align: left;
+	padding: 0 20px;
+}
+
+#wrapper {
+	text-align: center;
+}
